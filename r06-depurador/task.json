@@ -1,0 +1,8 @@
+{
+  "label": "compilar",
+  "type": "shell",
+  "command": "g++",
+  "args": ["-std=c++17", "-Wall",
+           "-Wextra", "-g",
+           "main.cpp", "-o", "programa"]
+}
