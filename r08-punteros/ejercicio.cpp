@@ -12,4 +12,6 @@ int main(){
     int x = 6;
     int y = 10;
     intercambiar1(x, y);
+    intercambiar2(&x, &y);
+    intercambiar3(x, y);
 }
