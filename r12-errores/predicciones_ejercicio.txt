@@ -1,0 +1,37 @@
+PREDICCIONES
+1 - Probablemente falto un ; un par de líneas
+    atrás o no se cerro una llave
+2 - La firma no coincide con lo que se escribió
+    probablemente un const o un intline que
+    faltó
+3 - Olvidó incluir el #include <string> o  
+    #include <iostream>
+4 - No incluyó el #include <vector>
+5 - Problema con el enlazador ya sea que faltó
+    la triple guardia o aparece en múltiples
+    archivos
+----------------------------------------------------------------------------------------------------
+1° p1.cpp:9:7: error: expected initializer before 'origen'
+2° /usr/bin/ld: undefined reference to `Cuenta::depositar(double)'
+3° p3.cpp:6:24: error: cannot convert 'std::string' to 'int'
+4° p4.cpp:3:10: error: 'vector' is not a member of 'std'
+5° /usr/bin/ld: multiple definition of `doble(int)'
+----------------------------------------------------------------------------------------------------
+RESPUESTAS
+1 - Compilador, sintaxis. 
+    Una declaración anterior no terminó: 
+    falta el punto y coma después de la llave 
+    que cierra una clase, arriba de la línea 9.
+2 - Enlazador. El cuerpo de depositar no existe, 
+    o su .cpp no se pasó al comando, o la firma 
+    del .cpp no coincide con la del header.
+3 - Compilador, tipos. Se llamó una función que
+    espera int con un std::string. 
+    La note siguiente indica qué parámetro es.
+4 - Compilador, nombre no declarado. 
+    Falta #include <vector>. Los errores 
+    posteriores sobre la variable son eco.
+5 - Enlazador. El cuerpo de doble está en un 
+    header incluido por dos .cpp. Dejar la 
+    declaración en el header y el cuerpo en 
+    un .cpp, o marcarla inline.
